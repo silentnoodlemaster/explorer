@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -28,6 +29,6 @@ func main() {
 	json.Unmarshal(body, &response)
 
 	for _, course := range response.Courses {
-		fmt.Printf("%s: %s %s€\n", course.Category, course.Title, course.Price)
+		fmt.Printf("%s: %s %s€\n", strings.TrimSpace(course.Category), strings.TrimSpace(course.Title), strings.TrimSpace(course.Price))
 	}
 }
