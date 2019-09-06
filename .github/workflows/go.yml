@@ -25,6 +25,7 @@ jobs:
         fi
 
     - name: Build
-      run: env GOOS=windows GOARCH=amd64 go build -v .
-      run: env GOOS=darwin GOARCH=amd64 go build -v . -o explorer-darwin
-      run: env GOOS=linux GOARCH=amd64 go build -v . -o explorer-linux
+      run: |
+        env GOOS=windows GOARCH=amd64 go build -v .
+        env GOOS=darwin GOARCH=amd64 go build -v . -o explorer-darwin
+        env GOOS=linux GOARCH=amd64 go build -v . -o explorer-linux
